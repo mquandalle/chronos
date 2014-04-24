@@ -1,0 +1,94 @@
+@import "nib"
+
+global-reset()
+
+*
+  user-select: none
+  overflow: hidden
+
+.loaded *
+  transition: 1s
+
+html, body
+  height: 100%
+
+body
+  display: flex
+  flex-direction: column
+  background: #48CFAD
+  color: white
+  line-height: 1.5em
+
+em
+  font-style:italic
+
+a
+  color: inherit
+
+button
+  background: transparent
+  border: 3px solid white
+  color: white
+  padding: 10px
+  margin-top: 15px
+  border-radius: 5px
+  cursor: pointer
+
+  &:hover
+    background: white
+    color: #34495e
+
+h1
+  font-size: 3em
+  line-height: 1.5em
+
+h2
+  font-size: 1.75em
+  line-height: 1.5em
+
+header, #fileAnalyse
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 0 10%
+
+header
+  flex-grow: 1
+
+#fileAnalyse
+  flex-grow: 2.5
+  align-items: center
+  background: #34495e
+
+  &.hidden
+    flex-grow: 0
+    height: 0
+
+  a.closeButton
+    align-self: flex-end
+    margin-bottom: auto
+    text-decoration none
+    padding: 10px 10px 0
+    font-size: 30px
+    color: #ACB4BD
+
+    &:hover
+      color: #f39c12
+
+  & *:last-child
+    margin-top: auto
+
+  h2 a
+    cursor: help
+    border-bottom: 1px dotted white
+
+footer
+  padding: 20px 3% 15px
+  opacity: 0.6
+  text-align: right
+  transition: opacity 0.5s
+  font-size: 0.9em
+  user-select: text
+
+  &:hover
+    opacity: 1

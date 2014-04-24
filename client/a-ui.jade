@@ -1,0 +1,34 @@
+head
+  title Trusted timestamping without trusted third-party
+
+body
+  header
+    h1 Chronos
+    p.instruction.
+      Drop a file to create or verify a <em>proof of existence</em>
+       at a given time.
+
+  section#fileAnalyse(class=fileAnalyseClassName)
+    a.closeButton(href="/") &times;
+    +renderPage
+    .marginauto
+
+  footer.
+    Created by Maxime Quandalle. See the code on
+     <a href="https://github.com/mquandalle/chronos" target="_blank">github</a>.
+
+template(name="analyseHash")
+  if date
+    h2 I have already seen {{> thisFile}} on <span class="date">#{date}</span>.
+  else
+    h2 I have never seen {{> thisFile}} before.
+    button.create Create a proof of existence
+
+template(name="thisFile")
+  a(title=hash) this file
+
+template(name="done")
+  h2 Done!
+  p.
+    You should see a pending transaction in your ethereum client. <br>
+    Come back later to see your file hash in the blockchain.
